@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODOを追加する</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="container">
+      <form action="javascript:void(0);" method="post" onsubmit="addItem()">
+        <div class="incomplete-area">
+          <div class="another-page">
+            <p>タスクの内容</p>
+            <textarea id="add-name" placeholder="100文字以内の入力"></textarea>
+          </div>
+          <div class="another-page">
+            <p>完了予定日</p>
+            <input id="add-date" type="date">
+          </div>
+          <div class="end_button">
+            <button type="submit">終了</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script type="text/javascript" src="../config/index.js"></script>
+</body>
+</html>

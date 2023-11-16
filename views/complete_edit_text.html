@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>完了したTODOを編集する</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <script type="text/javascript">
+    // loadされた直後に実行される事
+    window.onload = () => {
+    // URLパラメーターからデータを取得
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const name = params.get('name');
+    const isComplete = params.get('isComplete');
+    const date = new Date(params.get('date'));
+      const formattedDate = date.toLocaleString("ja-JP", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+      });
+
+    // 元のTODO内容をフォームに表示
+    document.getElementById('edit-name').value = name;
+
+    // 元の日付をフォームに表示("/"で文字列を分割し、分割された文字列を"-"で繋ぐ)
+    document.getElementById('edit-date').value = formattedDate.split("/").join("-");
+    };
+</script>
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="container">
+      <form action="javascript:void(0);" method="put" onsubmit="edit_updateItem()">
+        <div class="complete-area">
+          <div class="another-page">
+            <p>タスクの内容</p>
+            <textarea id="edit-name" placeholder="100文字以内の入力"></textarea>
+          </div>
+          <div class="another-page">
+            <p>完了日</p>
+            <input id="edit-date" type="date">
+          </div>
+          <div class="end_button">
+            <button type="submit">終了</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="../config/index.js"></script>
+</body>
+</html>
