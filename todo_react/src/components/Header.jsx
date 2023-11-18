@@ -1,6 +1,6 @@
 import React from 'react';
-import top from './top.jpeg';
-import './style.css';
+import top from '../images/top.jpeg';
+import '../stylesheets/style.css';
 
 export const Header = () => {
   return (
