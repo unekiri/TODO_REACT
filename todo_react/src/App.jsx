@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Header }  from './Header';
+import { getItems } from './GetItems';
+import { _displayItems } from './GetItems';
 import './style.css';
 
-export const App = () => {
+export const  App = () => {
+  useEffect(() => {
+    getItems(false);
+  }, []);
+
   return (
     <>
       <Header />
@@ -36,6 +42,7 @@ export const App = () => {
           </div>
        </div>
       </main>
+      <script src="./index.tsx"></script>
     </>
   );
 };
