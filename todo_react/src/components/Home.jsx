@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Header }  from './Header';
 import { getItems } from './GetItems';
-import { _displayItems } from './GetItems';
 import '../stylesheets/style.css';
 
 export const  Home = () => {
@@ -42,7 +41,6 @@ export const  Home = () => {
           </div>
        </div>
       </main>
-      <script src="./index.tsx"></script>
     </>
   );
 };
