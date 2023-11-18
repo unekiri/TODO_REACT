@@ -1,7 +1,3 @@
-import '../stylesheets/style.css';
-
-let todos = [];
-
 export const getItems = (showButtons) => {
     fetch("https://localhost:7034/api/todoitems", {
       method: 'GET',
@@ -91,5 +87,4 @@ export const _displayItems = (data, showButtons) => {
         incompleteList.appendChild(div_list);
       }
     });
-    todos = data;
 }
