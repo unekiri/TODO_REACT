@@ -9,7 +9,7 @@ export const Incomplete = () => {
     <Header />
     <main>
     <div className="add_text">
-      <Link to="add_text.html">TODOを追加する</Link>
+      <Link to="/add_text">TODOを追加する</Link>
     </div>
     <div className="container">
       <div className="incomplete-area">
@@ -22,7 +22,7 @@ export const Incomplete = () => {
             <div className="list-row">
               <li>未完了のTODO</li>
               <div className="item-area">
-                <span classaName="detail-plan">2023/11/17</span>
+                <span className="detail-plan">2023/11/17</span>
                 <button onClick="#'">編集</button>
                 <button>削除</button>
                 <button onClick="#">完了へ変更</button>
