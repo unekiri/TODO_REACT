@@ -9,15 +9,13 @@ import './stylesheets/style.css';
 
 export const  App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/incomplete" element={<Incomplete />} />
-          <Route path="/complete" element={<Complete />} />
-          <Route path="/addtext" element={<Addtext />} />
-        </Routes> 
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/incomplete" element={<Incomplete />} />
+        <Route path="/complete" element={<Complete />} />
+        <Route path="/addtext" element={<Addtext />} />
+      </Routes> 
+    </BrowserRouter>
   );
 };
