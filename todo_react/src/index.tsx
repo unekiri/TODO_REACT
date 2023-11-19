@@ -4,5 +4,8 @@ import "./stylesheets/style.css";
 
 import { App } from "./App";
 
-const rootElement = document.getElementById("root");
-createRoot(rootElement ?? document.createElement("div")).render(<App />);
+const rootElement = document.getElementById("root") || document.createElement("div");
+if (!rootElement.id) {
+  rootElement.id = "root";
+}
+createRoot(rootElement).render(<App />);
