@@ -17,7 +17,7 @@ export const  Home = () => {
             <p className="title">未完了一覧</p>
             <div className="headline">
               <span className="contents">内容</span>
-              <span className="contents">予定日</span>
+              <span className="plan">予定日</span>
             </div>
             <ul id="incomplete-list">
               <div className="list-row">
@@ -30,7 +30,7 @@ export const  Home = () => {
             <p className="title">完了一覧</p>
             <div className="headline">
               <span className="contents">内容</span>
-              <span className="contents">完了日</span>
+              <span className="plan">完了日</span>
             </div>
             <ul id="complete-list">
               <div className="list-row">
