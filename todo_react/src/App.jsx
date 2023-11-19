@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home }  from './components/Home';
 import { Incomplete } from './components/Incomplete';
 import { Complete } from './components/Complete';
-import { Add_text } from './components/Add_text';
+import { Addtext } from './components/Addtext';
 
 import './stylesheets/style.css';
 
@@ -15,7 +15,7 @@ export const  App = () => {
           <Route exact path="/" element={<Home />} />
           <Route path="/incomplete" element={<Incomplete />} />
           <Route path="/complete" element={<Complete />} />
-          <Route path="/add_text" element={<Add_text />} />
+          <Route path="/addtext" element={<Addtext />} />
         </Routes> 
       </BrowserRouter>
     </>
