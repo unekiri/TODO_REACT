@@ -9,7 +9,6 @@ export const  App = () => {
   return (
     <>
       <BrowserRouter>
-      <Home />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/incomplete" element={<Incomplete />} />
