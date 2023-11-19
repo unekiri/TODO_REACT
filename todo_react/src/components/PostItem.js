@@ -29,7 +29,7 @@ export const addItem = () => {
     .then(response => response.json())
     .then(() => {
       // HOMEへのリダイレクト
-      window.location.href = 'index.html';
+      window.location.href = '/';
     })
     .catch(error => console.error('Unable to add item.', error));
 }

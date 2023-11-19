@@ -6,7 +6,7 @@ import '../stylesheets/style.css';
 export const  Home = () => {
   useEffect(() => {
     getItems(false);
-  }, []); // 第二引数が空の場合、初回レンダリング時に一度だけ実行する
+  }, []); // 第二引数が空の場合、初回レンダリング時に一度だけ実行される
 
   return (
     <>
