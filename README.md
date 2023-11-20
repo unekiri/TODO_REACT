@@ -9,4 +9,4 @@ TODOアプリのクライアントサイド
 * 完了済のTODOのみを表示
 
 ## [システムの全体構成図]
-<img src="/src/images/system.jpg">
+<img src="todo_react/src/images/system.jpg">
