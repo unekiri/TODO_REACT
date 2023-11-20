@@ -25,8 +25,6 @@ export const addItem = () => {
     // JSON文字列への変換
     body: JSON.stringify(item)
   })
-    // リクエストが成功すると、下記でJSONオブジェクトを処理する
-    .then(response => response.json())
     .then(() => {
       // HOMEへのリダイレクト
       window.location.href = '/';
