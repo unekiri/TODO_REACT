@@ -1,5 +1,7 @@
 // POSTアクションのイベントハンドラ
 
+const uri = 'https://localhost:7034/api/todoitems';
+
 export const addItem = () => {
   const addNameTextbox = document.getElementById('add-name');
   const addDate = document.getElementById('add-date');
@@ -13,7 +15,7 @@ export const addItem = () => {
     date: UTCDate.toISOString()
   };
 
-  fetch("https://localhost:7034/api/todoitems", {
+  fetch(uri, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
