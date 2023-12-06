@@ -24,14 +24,7 @@ export const Incomplete = () => {
         </div>
           <ul id="incomplete-list">
             <div className="list-row">
-              <li>未完了のTODO</li>
-              <div className="item-area">
-                <span className="detail-plan">2023/11/17</span>
-                <button onClick="#'">編集</button>
-                <button>削除</button>
-                <button onClick="#">完了へ変更</button>
-              </div>
-           </div>
+            </div>
           </ul>
       </div>
     </div>

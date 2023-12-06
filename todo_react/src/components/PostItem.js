@@ -6,10 +6,7 @@ export const addItem = () => {
 
   // Dateオブジェクトを生成し、そのDateオブジェクトをUTCに変更する
   const UTCDate = new Date(addDate.value);
-  UTCDate.setUTCHours(0, 0, 0, 0);
-
-  console.log(UTCDate);
-
+  
   const item = {
     name: addNameTextbox.value,
     isComplete: false,
