@@ -20,13 +20,6 @@ export const Complete = () => {
         </div>
           <ul id="complete-list">
             <div className="list-row">
-              <li>完了したTODO</li>
-              <div className="item-area">
-                <span className="detail-plan">2023/11/17</span>
-                <button onClick="#">編集</button>
-                <button>削除</button>
-                <button onClick="#">未完了へ変更</button>
-            </div>
             </div>
           </ul>
       </div>
