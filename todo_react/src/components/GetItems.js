@@ -3,25 +3,19 @@
 let todos = [];
 const uri = 'https://localhost:7034/api/todoitems';
 
-export const getItems = async (showButtons) => {
-  try {
-    const response = await fetch(uri, {method: 'GET',});
-
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
+export const getItems = (showButtons) => {
+    fetch(uri, {
+      method: 'GET',
+    })
 
     // リクエストが成功すると、下記でresponseオブジェクトを処理する
-    const jsonData = await response.json();
-    _displayItems(jsonData, showButtons);
-  
-  } catch (error) {
-    console.error('Unable to get items.', error);
-  } 
+    .then(response => response.json())
+    .then(data => _displayItems(data, showButtons))
+    .catch(error => console.error('Unable to get items.', error));
 }
 
-export const _displayItems = (jsonData, showButtons) => {
-    jsonData.forEach(item => {
+export const _displayItems = (data, showButtons) => {
+    data.forEach(item => {
 
       const completeList = document.getElementById("complete-list");
       const incompleteList = document.getElementById("incomplete-list");
@@ -96,5 +90,5 @@ export const _displayItems = (jsonData, showButtons) => {
       }
     });
 
-    todos = jsonData;
+    todos = data;
 }
