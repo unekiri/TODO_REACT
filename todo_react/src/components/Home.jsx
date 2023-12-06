@@ -3,7 +3,7 @@ import { Header }  from './Header';
 import { getItems } from './GetItems';
 import '../stylesheets/style.css';
 
-export const  Home = () => {
+export const Home = () => {
   useEffect(() => {
     getItems(false);
   }, []); // 第二引数が空の場合、初回レンダリング時に一度だけ実行される
@@ -20,10 +20,6 @@ export const  Home = () => {
               <span className="plan">予定日</span>
             </div>
             <ul id="incomplete-list">
-              <div className="list-row">
-                <li>未完了のTODO</li>
-                <span className="detail-plan">2023/11/20</span>
-              </div>
             </ul>
           </div>
           <div className="complete-area">
@@ -33,10 +29,6 @@ export const  Home = () => {
               <span className="plan">完了日</span>
             </div>
             <ul id="complete-list">
-              <div className="list-row">
-                <li>完了したTODO</li>
-                <span className="detail-plan">2023/11/20</span>
-              </div>
             </ul>
           </div>
        </div>
