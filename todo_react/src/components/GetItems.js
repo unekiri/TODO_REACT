@@ -1,21 +1,27 @@
 // GETアクションのイベントハンドラ
 
 let todos = [];
+const uri = 'https://localhost:7034/api/todoitems';
 
-export const getItems = (showButtons) => {
-    fetch("https://localhost:7034/api/todoitems", {
-      method: 'GET',
-    })
+export const getItems = async (showButtons) => {
+  try {
+    const response = await fetch(uri, {method: 'GET',});
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
     // リクエストが成功すると、下記でresponseオブジェクトを処理する
-    .then(response => response.json())
-    .then(data => {
-      _displayItems(data, showButtons);
-    })
-    .catch(error => console.error('Unable to get items.', error));
+    const jsonData = await response.json();
+    _displayItems(jsonData, showButtons);
+  
+  } catch (error) {
+    console.error('Unable to get items.', error);
+  } 
 }
 
-export const _displayItems = (data, showButtons) => {
-    data.forEach(item => {
+export const _displayItems = (jsonData, showButtons) => {
+    jsonData.forEach(item => {
 
       const completeList = document.getElementById("complete-list");
       const incompleteList = document.getElementById("incomplete-list");
@@ -82,13 +88,13 @@ export const _displayItems = (data, showButtons) => {
         div_item.appendChild(deleteButton);
         div_item.appendChild(changeButton);
        }
-  
-      // ここでitem.isCompleteの値を確認し、適切なリストに追加する
-      // && completeList もしくは incompleteListを書くことで。item.isComplete == undefindのパターンを回避できる
+
       if (item.isComplete && completeList) {
         completeList.appendChild(div_list);
       } else if (!item.isComplete && incompleteList) {
         incompleteList.appendChild(div_list);
       }
     });
+
+    todos = jsonData;
 }
