@@ -8,8 +8,7 @@ export const Addtext = () => {
   // useFormの初期化
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const handleOnSubmit = (values) => {
-    console.log(values);
+  const handleOnSubmit = () => {
     addItem();
   }
 

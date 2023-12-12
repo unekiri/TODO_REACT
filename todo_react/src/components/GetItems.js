@@ -1,3 +1,5 @@
+import { editItem } from './EditItems';
+
 // GETアクションのイベントハンドラ
 
 let todos = [];
@@ -10,11 +12,11 @@ export const getItems = (showButtons) => {
 
     // リクエストが成功すると、下記でresponseオブジェクトを処理する
     .then(response => response.json())
-    .then(data => _displayItems(data, showButtons))
+    .then(data => _displayItems(data, showButtons, todos))
     .catch(error => console.error('Unable to get items.', error));
 }
 
-export const _displayItems = (data, showButtons) => {
+export const _displayItems = (data, showButtons, todos) => {
     data.forEach(item => {
 
       const completeList = document.getElementById("complete-list");
@@ -57,7 +59,7 @@ export const _displayItems = (data, showButtons) => {
         editButton.innerText = '編集';
         editButton.addEventListener('click', () => {
           const edit_item = todos.find(edit_item => edit_item.id === item.id);
-          editItem(edit_item.id);
+          editItem(edit_item.id, todos);
         });
   
         const deleteButton = document.createElement("button");
