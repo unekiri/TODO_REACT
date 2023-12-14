@@ -9,8 +9,8 @@ export const editItem = (id, todos) => {
 
   // 編集フォームへのリダイレクト
   if (edit_item.isComplete) {
-    window.location.href = 'complete_edit.html' + queryString;
+    window.location.href = '/complete_edit' + queryString;
   } else {
-    window.location.href = 'incomplete_edit.html' + queryString;
+    window.location.href = '/incomplete_edit' + queryString;
   }
 }
