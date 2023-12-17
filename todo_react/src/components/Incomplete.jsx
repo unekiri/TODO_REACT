@@ -7,7 +7,7 @@ import '../stylesheets/style.css';
 export const Incomplete = () => {
   useEffect(() => {
     getItems(true);
-  }, []);
+  }, []); //第二引数にからの配列を渡す事で、マウントされた時に発火される
   return (
     <>
     <Header />
