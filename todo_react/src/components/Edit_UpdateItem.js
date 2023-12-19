@@ -2,8 +2,8 @@
 const uri = 'https://localhost:7034/api/todoitems';
 
 export const edit_updateItem = (bool) => {
-  const editNameTextbox = document.getElementById('edit-name');
-  const editDate = document.getElementById('edit-date');
+  const editNameTextbox = document.getElementById('name');
+  const editDate = document.getElementById('date');
 
   const editUTCDate = new Date(editDate.value);
 

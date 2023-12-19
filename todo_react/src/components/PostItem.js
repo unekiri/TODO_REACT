@@ -3,8 +3,8 @@
 const uri = 'https://localhost:7034/api/todoitems';
 
 export const addItem = () => {
-  const addNameTextbox = document.getElementById('add-name');
-  const addDate = document.getElementById('add-date');
+  const addNameTextbox = document.getElementById('name');
+  const addDate = document.getElementById('date');
 
   // Dateオブジェクトを生成し、そのDateオブジェクトをUTCに変更する
   const UTCDate = new Date(addDate.value);
