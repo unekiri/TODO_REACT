@@ -10,7 +10,7 @@ export const Form = ({ onSubmit }) => {
         <div className="another-page">
           <p>タスクの内容</p>
           <textarea 
-            id="add-name" placeholder="100文字以内の入力"
+            id="name" placeholder="100文字以内の入力"
             {...register('name', {
               required: '入力必須です。', 
               maxLength : {value: 100, message: '100文字以内で入力して下さい。'}
@@ -21,7 +21,7 @@ export const Form = ({ onSubmit }) => {
         <div className="another-page">
           <p>完了予定日</p>
           <input 
-            id="add-date" type="date" 
+            id="date" type="date" 
             {...register('date', { 
                 required: '入力必須です。' }
             )}

@@ -13,7 +13,6 @@ export const Incomplete_Edit = () => {
     Load((httpData) => {
       const date = new Date(httpData.date);
       const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-
       // 元のTODO内容をフォームに表示
       setValue('name', httpData.name);
       // 元の日付をフォームに表示
