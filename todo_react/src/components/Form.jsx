@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 export const Form = ({ onSubmit }) => {
+  console.log(onSubmit);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   return (
