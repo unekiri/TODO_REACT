@@ -1,4 +1,5 @@
 import { editItem } from './EditItems';
+import { deleteItem } from './DeleteItem';
 
 // GETアクションのイベントハンドラ
 
