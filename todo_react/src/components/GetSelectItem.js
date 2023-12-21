@@ -6,4 +6,5 @@ export const getSelectItem = async (id) => {
   return await fetch(`${uri}/${id}`, {
     method: 'GET',
   })
+  .catch(error => console.error('Unable to get items.', error));
 }
