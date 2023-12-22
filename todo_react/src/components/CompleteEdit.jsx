@@ -5,7 +5,7 @@ import { Load } from './Load';
 import { edit_updateItem } from './Edit_UpdateItem';
 import '../stylesheets/style.css';
 
-export const Complete_Edit = () => {
+export const CompleteEdit = () => {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm({
     defaultValues: {
       name: '',
