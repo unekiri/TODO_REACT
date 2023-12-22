@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Header } from './Header';
 import { Load } from './Load';
-import { edit_updateItem } from './Edit_UpdateItem';
+import { change_updateItem } from './Change_UpdateItem';
 import '../stylesheets/style.css';
 
-export const Incomplete_Edit = () => {
+export const IncompleteChange = () => {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm({
     defaultValues: {
       name: '',
@@ -17,15 +17,13 @@ export const Incomplete_Edit = () => {
     Load((httpData) => {
       const date = new Date(httpData.date);
       const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-      // 元のTODO内容をフォームに表示
-      setValue('name', httpData.name);
       // 元の日付をフォームに表示
       setValue('date', formattedDate);
     });
   }, [setValue]);
   
   const handleOnSubmit = () => {
-    edit_updateItem(false);
+    change_updateItem(false);
   }
 
   return (
@@ -34,20 +32,9 @@ export const Incomplete_Edit = () => {
     <main>
       <div className="container">
         <form onSubmit={handleSubmit(handleOnSubmit)}>
-          <div className="incomplete-area">
+          <div className="complete-area">
             <div className="another-page">
-              <p>タスクの内容</p>
-              <textarea 
-                id="name" placeholder="100文字以内の入力"
-                {...register('name', {
-                  required: '入力必須です。', 
-                  maxLength : {value: 100, message: '100文字以内で入力して下さい。'}
-                })}
-              />
-              {errors.name && <span className="error-message">{errors.name.message}</span>}
-            </div>
-            <div className="another-page">
-              <p>完了予定日</p>
+              <p>完了日</p>
               <input 
                 id="date" type="date" 
                 {...register('date', { 

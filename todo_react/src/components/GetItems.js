@@ -1,5 +1,6 @@
 import { editItem } from './EditItems';
 import { deleteItem } from './DeleteItem';
+import { changeItem } from './ChangeItem';
 
 // GETアクションのイベントハンドラ
 
@@ -78,7 +79,7 @@ export const _displayItems = (data, showButtons, todos) => {
         }
         changeButton.addEventListener('click', () => {
           const change_item = todos.find(change_item => change_item.id === item.id);
-          changeItem(change_item.id);
+          changeItem(change_item.id, todos);
         });
   
         div_item.appendChild(editButton);
