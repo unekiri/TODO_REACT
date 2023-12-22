@@ -7,6 +7,7 @@ import { Addtext } from './components/Addtext';
 import { IncompleteEdit } from './components/IncompleteEdit';
 import { CompleteEdit } from './components/CompleteEdit';
 import { IncompleteChange } from './components/IncompleteChange';
+import { CompleteChange } from './components/CompleteChange';
 
 import './stylesheets/style.css';
 
@@ -21,6 +22,7 @@ export const  App = () => {
         <Route path="/incomplete_edit" element={<IncompleteEdit />} />
         <Route path="/complete_edit" element={<CompleteEdit />} />
         <Route path="/incomplete_change" element={<IncompleteChange />} />
+        <Route path="/complete_change" element={<CompleteChange />} />
       </Routes> 
     </BrowserRouter>
   );
