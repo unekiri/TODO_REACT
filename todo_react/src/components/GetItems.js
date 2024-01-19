@@ -3,7 +3,6 @@ import { deleteItem } from './DeleteItem';
 import { changeItem } from './ChangeItem';
 
 // GETアクションのイベントハンドラ
-
 let todos = [];
 const uri = 'https://localhost:7034/api/todoitems';
 
