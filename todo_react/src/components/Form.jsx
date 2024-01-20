@@ -1,15 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { BackStyle, TitleStyle } from './ViewComponent';
 
-export const Form = ({ onSubmit }) => {
-  console.log(onSubmit);
+export const Form = ({ onSubmit, bkcolor }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const individualBackStyle = {
+    ...BackStyle, //オブジェクトの展開
+    backgroundColor: bkcolor, //プロパティの追加
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="incomplete-area">
+      <div className="area" style={individualBackStyle}>
         <div className="another-page">
-          <p>タスクの内容</p>
+          <p style={TitleStyle}>タスクの内容</p>
           <textarea 
             id="name" placeholder="100文字以内の入力"
             {...register('name', {
@@ -20,7 +24,7 @@ export const Form = ({ onSubmit }) => {
           {errors.name && <span className="error-message">{errors.name.message}</span>}
         </div>
         <div className="another-page">
-          <p>完了予定日</p>
+          <p style={TitleStyle}>完了予定日</p>
           <input 
             id="date" type="date" 
             {...register('date', { 

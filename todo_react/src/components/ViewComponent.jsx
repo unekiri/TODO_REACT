@@ -1,24 +1,28 @@
 import React from 'react';
 
-export const ViewComponent = (props) => {
-  const ContentStyle = {
-    backgroundColor: props.bkcolor,
-    minWidth: "480px",
-    minHeight: "200px",
-    padding: "10px",
-    margin: "10px",
-    borderRadius: "8px",
-  };
+export const BackStyle = {
+  minWidth: "480px",
+  minHeight: "200px",
+  padding: "10px",
+  margin: "10px",
+  borderRadius: "8px",
+};
 
-  const TitleStyle = {
-    margin: "8px 0",
-    color: "#333",
-    fontWeight: "bold",
-  }
+export const TitleStyle = {
+  margin: "8px 0",
+  color: "#333",
+  fontWeight: "bold",
+};
+
+export const ViewComponent = (props) => {
+  const individualBackStyle = {
+    ...BackStyle, //オブジェクトの展開
+    backgroundColor: props.bkcolor, //プロパティの追加
+  };
 
   return (
     <>
-      <div class="area" style={ContentStyle}>
+      <div className="area" style={individualBackStyle}>
         <p className="title" style={TitleStyle}>{props.title}</p>
         <div className="headline">
           <span className="contents">{props.content}</span>
@@ -27,5 +31,5 @@ export const ViewComponent = (props) => {
         {props.children}
       </div>
     </>
-  )
-}
+  );
+};

@@ -14,7 +14,7 @@ export const Addtext = () => {
     <Header />
     <main>
       <div className="container">
-        <Form onSubmit={handleOnSubmit} />
+        <Form onSubmit={handleOnSubmit} bkcolor="#c1ffe2"/>
       </div>
     </main>
     </>
