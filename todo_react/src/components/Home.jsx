@@ -14,17 +14,25 @@ export const Home = () => {
       <Header />
       <main>
         <div className="container">
-          <ViewComponent 
+          <ViewComponent
+            bkcolor="#c1ffe2" 
             title="未完了一覧"
             content="内容"
             plan="予定日"
-          />
-          <ViewComponent 
+          >
+          <ul id="incomplete-list">
+          </ul>
+          </ViewComponent>
+          <ViewComponent
+            bkcolor="#ffffe0" 
             title="完了一覧"
             content="内容"
             plan="完了日"
-          />
-       </div>
+          >
+          <ul id="complete-list">
+          </ul>
+          </ViewComponent>
+        </div>
       </main>
     </>
   );

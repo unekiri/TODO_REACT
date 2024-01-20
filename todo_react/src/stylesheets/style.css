@@ -76,15 +76,6 @@ button:hover {
   align-items: center;
 }
 
-.incomplete-area {
-  background-color: #c1ffe2;
-  min-width: 480px;
-  min-height: 200px;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-}
-
 .headline {
   display: flex;
   justify-content: space-around;
@@ -96,27 +87,6 @@ button:hover {
 
 .plan {
   color: #ff7fff;
-}
-
-.incomplete-area p {
-  margin: 8px 0;
-  color: #333;
-  font-weight: bold;
-}
-
-.complete-area {
-  background-color: #ffffe0;
-  min-width: 480px;
-  min-height: 200px;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px;
-}
-
-.complete-area p {
-  margin: 8px 0;
-  color: #333;
-  font-weight: bold;
 }
 
 .title {
