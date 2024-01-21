@@ -3,10 +3,13 @@ import { useForm } from 'react-hook-form';
 import { Header } from './Header';
 import { Load } from './Load';
 import { change_updateItem } from './Change_UpdateItem';
+import { FormContents } from './FormContents';
+import { FormDate } from './FormDate';
+import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
 
 export const IncompleteChange = () => {
-  const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+  const { handleSubmit, setValue } = useForm({
     defaultValues: {
       name: '',
       date: '',
@@ -31,23 +34,12 @@ export const IncompleteChange = () => {
     <Header />
     <main>
       <div className="container">
-        <form onSubmit={handleSubmit(handleOnSubmit)}>
-          <div className="complete-area">
-            <div className="another-page">
-              <p>完了日</p>
-              <input 
-                id="date" type="date" 
-                {...register('date', { 
-                    required: '入力必須です。' }
-                )}
-              />
-              {errors.date && <span className="error-message">{errors.date.message}</span>}
-            </div>
-            <div className="end_button">
-              <button type="submit">送信</button>
-            </div>
-          </div>
-        </form>
+        <form onSubmit={handleSubmit(handleOnSubmit)}/>
+        <div className="area">
+          <FormContents/>
+          <FormDate title="完了日"/>
+          <FormButton/>
+        </div>
       </div>
     </main>
     </>

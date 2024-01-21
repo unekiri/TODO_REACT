@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Header } from './Header';
 import { Load } from './Load';
-import { Form } from './Form';
 import { edit_updateItem } from './Edit_UpdateItem';
+import { FormContents } from './FormContents';
+import { FormDate } from './FormDate';
+import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
 
 export const IncompleteEdit = () => {
-  const { setValue } = useForm({
+  const { handleSubmit, setValue } = useForm({
     defaultValues: {
       name: '',
       date: '',
@@ -29,13 +31,17 @@ export const IncompleteEdit = () => {
     edit_updateItem(false);
   }
 
-
   return (
     <>
     <Header />
     <main>
       <div className="container">
-        <Form onSubmit={handleOnSubmit} bkcolor="#c1ffe2"/>
+        <form onSubmit={handleSubmit(handleOnSubmit)}/>
+        <div className="area">
+          <FormContents/>
+          <FormDate title="完了予定日"/>
+          <FormButton/>
+        </div>
       </div>
     </main>
     </>
