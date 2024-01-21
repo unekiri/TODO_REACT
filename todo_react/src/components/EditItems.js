@@ -1,5 +1,4 @@
 // UPDATE(編集)アクションのイベントハンドラ
-
 export const editItem = (id, todos) => {
   // 該当アイテムを取得
   const edit_item = todos.find(item => item.id === id);

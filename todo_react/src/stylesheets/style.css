@@ -76,6 +76,19 @@ button:hover {
   align-items: center;
 }
 
+.title {
+  margin: 8px 0;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form {
+  margin: 8px 0;
+  color: #333;
+  font-weight: bold;
+}
+
 .headline {
   display: flex;
   justify-content: space-around;
@@ -89,10 +102,6 @@ button:hover {
   color: #ff7fff;
 }
 
-.title {
-  font-weight: bold;
-  text-align: center;
-}
 
 .list-row {
   display: flex;

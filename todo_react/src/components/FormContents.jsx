@@ -1,13 +1,11 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { TitleStyle } from './View';
 
-export const FormContents = () => {
-  const { register, formState: { errors } } = useForm();
+export const FormContents = ({ formMethods }) => {
+  const { register, formState: { errors } } = formMethods;
 
   return (
       <div className="another-page">
-        <p style={TitleStyle}>タスクの内容</p>
+        <p className="form">タスクの内容</p>
         <textarea 
           id="name" placeholder="100文字以内の入力"
           {...register('name', {

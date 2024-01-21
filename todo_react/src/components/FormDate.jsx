@@ -1,13 +1,11 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { TitleStyle } from './View';
 
-export const FormDate = ({ title }) => {
-  const { register, formState: { errors } } = useForm();
+export const FormDate = ({ title, formMethods }) => {
+  const { register, formState: { errors } } = formMethods;
 
   return (
       <div className="another-page">
-        <p style={TitleStyle}>{title}</p>
+        <p className="form">{title}</p>
         <input 
           id="date" type="date" 
           {...register('date', { 

@@ -3,13 +3,12 @@ import { useForm } from 'react-hook-form';
 import { Header } from './Header';
 import { Load } from './Load';
 import { change_updateItem } from './Change_UpdateItem';
-import { FormContents } from './FormContents';
 import { FormDate } from './FormDate';
 import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
 
 export const IncompleteChange = () => {
-  const { handleSubmit, setValue } = useForm({
+  const { handleSubmit, setValue, ...formMethods } = useForm({
     defaultValues: {
       name: '',
       date: '',
@@ -34,12 +33,12 @@ export const IncompleteChange = () => {
     <Header />
     <main>
       <div className="container">
-        <form onSubmit={handleSubmit(handleOnSubmit)}/>
-        <div className="area">
-          <FormContents/>
-          <FormDate title="完了日"/>
-          <FormButton/>
-        </div>
+        <form onSubmit={handleSubmit(handleOnSubmit)}>
+          <div className="area">
+            <FormDate title="完了日" formMethods={formMethods}/>
+            <FormButton/>
+          </div>
+        </form>
       </div>
     </main>
     </>
