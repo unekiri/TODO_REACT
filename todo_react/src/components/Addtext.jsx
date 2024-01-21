@@ -11,12 +11,12 @@ export const Addtext = () => {
 
   return (
     <>
-    <Header />
-    <main>
-      <div className="container">
-        <Form onSubmit={handleOnSubmit} bkcolor="#c1ffe2"/>
-      </div>
-    </main>
+      <Header />
+      <main>
+        <div className="container">
+          <Form onSubmit={handleOnSubmit} bkcolor="#c1ffe2"/>
+        </div>
+      </main>
     </>
   );
 };
