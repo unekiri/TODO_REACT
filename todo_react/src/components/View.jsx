@@ -14,7 +14,7 @@ export const TitleStyle = {
   fontWeight: "bold",
 };
 
-export const ViewComponent = ({ bkcolor, title, content, plan, children }) => {
+export const View = ({ bkcolor, title, content, plan, children }) => {
   const individualBackStyle = {
     ...BackStyle, //オブジェクトの展開
     backgroundColor: bkcolor, //プロパティの追加

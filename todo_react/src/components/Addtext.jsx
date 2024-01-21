@@ -1,10 +1,14 @@
-import React from 'react';
+import { React, useForm } from 'react';
 import { Header} from './Header';
 import { addItem } from './PostItem';
-import { Form } from './Form';
+import { FormContents } from './FormContents';
+import { FormDate } from './FormDate';
+import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
 
 export const Addtext = () => {
+  const { handleSubmit } = useForm();
+
   const handleOnSubmit = () => {
     addItem();
   }
@@ -14,7 +18,13 @@ export const Addtext = () => {
       <Header />
       <main>
         <div className="container">
-          <Form onSubmit={handleOnSubmit} bkcolor="#c1ffe2"/>
+          <form onSubmit={handleSubmit(handleOnSubmit)}>
+            <div className="area">
+              <FormContents/>
+              <FormDate title="完了予定日"/>
+              <FormButton/>
+            </div>
+          </form>
         </div>
       </main>
     </>
