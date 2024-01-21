@@ -9,7 +9,7 @@ import { edit_updateItem } from './Edit_UpdateItem';
 import '../stylesheets/style.css';
 
 export const CompleteEdit = () => {
-  const { handleSubmit, setValue } = useForm({
+  const { handleSubmit, setValue, ...formMethods } = useForm({
     defaultValues: {
       name: '',
       date: '',
@@ -38,8 +38,8 @@ export const CompleteEdit = () => {
       <div className="container">
         <form onSubmit={handleSubmit(handleOnSubmit)}>
           <div className="area">
-            <FormContents/>
-            <FormDate title="完了日"/>
+            <FormContents formMethods={formMethods}/>
+            <FormDate title="完了日" formMethods={formMethods}/>
             <FormButton/>
           </div>
         </form>

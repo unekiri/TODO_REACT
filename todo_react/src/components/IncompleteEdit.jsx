@@ -9,7 +9,7 @@ import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
 
 export const IncompleteEdit = () => {
-  const { handleSubmit, setValue } = useForm({
+  const { handleSubmit, setValue, ...formMethods } = useForm({
     defaultValues: {
       name: '',
       date: '',
@@ -36,12 +36,13 @@ export const IncompleteEdit = () => {
     <Header />
     <main>
       <div className="container">
-        <form onSubmit={handleSubmit(handleOnSubmit)}/>
-        <div className="area">
-          <FormContents/>
-          <FormDate title="完了予定日"/>
-          <FormButton/>
-        </div>
+        <form onSubmit={handleSubmit(handleOnSubmit)}>
+          <div className="area">
+            <FormContents formMethods={formMethods}/>
+            <FormDate title="完了予定日" formMethods={formMethods}/>
+            <FormButton/>
+          </div>
+        </form>
       </div>
     </main>
     </>

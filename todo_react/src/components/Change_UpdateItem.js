@@ -1,7 +1,6 @@
 import { getSelectItem } from './GetSelectItem';
 
 // UPDATE(変更)メソッドのイベントハンドラ(続き)
-
 const uri = 'https://localhost:7034/api/todoitems';
 
 export const change_updateItem = (bool) => {

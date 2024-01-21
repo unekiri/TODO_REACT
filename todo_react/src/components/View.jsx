@@ -1,18 +1,5 @@
 import React from 'react';
-
-export const BackStyle = {
-  minWidth: "480px",
-  minHeight: "200px",
-  padding: "10px",
-  margin: "10px",
-  borderRadius: "8px",
-};
-
-export const TitleStyle = {
-  margin: "8px 0",
-  color: "#333",
-  fontWeight: "bold",
-};
+import { BackStyle } from './BackStyle';
 
 export const View = ({ bkcolor, title, content, plan, children }) => {
   const individualBackStyle = {
@@ -22,7 +9,7 @@ export const View = ({ bkcolor, title, content, plan, children }) => {
 
   return (
     <div className="area" style={individualBackStyle}>
-      <p className="title" style={TitleStyle}>{title}</p>
+      <p className="title">{title}</p>
       <div className="headline">
         <span className="contents">{content}</span>
         <span className="plan">{plan}</span>

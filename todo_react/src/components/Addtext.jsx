@@ -1,4 +1,5 @@
-import { React, useForm } from 'react';
+import { React } from 'react';
+import { useForm } from 'react-hook-form';
 import { Header} from './Header';
 import { addItem } from './PostItem';
 import { FormContents } from './FormContents';
@@ -7,7 +8,7 @@ import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
 
 export const Addtext = () => {
-  const { handleSubmit } = useForm();
+  const { handleSubmit, ...formMethods } = useForm(); //useFormフックから返されるオブジェクトを分割代入
 
   const handleOnSubmit = () => {
     addItem();
@@ -20,8 +21,8 @@ export const Addtext = () => {
         <div className="container">
           <form onSubmit={handleSubmit(handleOnSubmit)}>
             <div className="area">
-              <FormContents/>
-              <FormDate title="完了予定日"/>
+              <FormContents formMethods={formMethods}/>
+              <FormDate title="完了予定日" formMethods={formMethods}/>
               <FormButton/>
             </div>
           </form>

@@ -1,4 +1,4 @@
-
+// UPDATE(編集)アクションのイベントハンドラ(続き)
 const uri = 'https://localhost:7034/api/todoitems';
 
 export const edit_updateItem = (bool) => {
