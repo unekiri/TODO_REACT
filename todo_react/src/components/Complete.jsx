@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Header} from './Header';
-import { View } from './View';
+import { MainView } from './MainView';
 import { getItems } from './GetItems'; 
 import '../stylesheets/style.css';
 
@@ -13,7 +13,7 @@ export const Complete = () => {
     <Header />
     <main>
       <div className="container">
-        <View
+        <MainView
           bkcolor="#ffffe0" 
           title="完了一覧"
           content="内容"
@@ -21,7 +21,7 @@ export const Complete = () => {
         >
         <ul id="complete-list">
         </ul>
-        </View>
+        </MainView>
       </div>
     </main>
     </>

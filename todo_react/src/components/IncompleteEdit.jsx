@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Header } from './Header';
 import { Load } from './Load';
-import { edit_updateItem } from './Edit_UpdateItem';
 import { FormContents } from './FormContents';
 import { FormDate } from './FormDate';
 import { FormButton } from './FormButton';
 import '../stylesheets/style.css';
+import { edit_updateItem } from './Edit_UpdateItem';
 
 export const IncompleteEdit = () => {
   const { handleSubmit, setValue, ...formMethods } = useForm({
