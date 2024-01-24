@@ -1,6 +1,6 @@
-// DELETEメソッドのイベントハンドラ
-const uri = 'https://localhost:7034/api/todoitems';
+import { uri } from './ApiUrl'
 
+// DELETEメソッドのイベントハンドラ
 export const deleteItem = (id, isComplete) => {
     fetch(`${uri}/${id}`, {
       method: 'DELETE'

@@ -1,8 +1,7 @@
 import { getSelectItem } from './GetSelectItem';
+import { uri } from './ApiUrl'
 
 // UPDATE(変更)メソッドのイベントハンドラ(続き)
-const uri = 'https://localhost:7034/api/todoitems';
-
 export const change_updateItem = (bool) => {
   const changeDate = document.getElementById('date');
   const changeUTCDate = new Date(changeDate.value);

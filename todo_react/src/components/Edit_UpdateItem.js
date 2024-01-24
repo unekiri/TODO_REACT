@@ -1,6 +1,6 @@
-// UPDATE(編集)アクションのイベントハンドラ(続き)
-const uri = 'https://localhost:7034/api/todoitems';
+import { uri } from './ApiUrl'
 
+// UPDATE(編集)アクションのイベントハンドラ(続き)
 export const edit_updateItem = (bool) => {
   const editNameTextbox = document.getElementById('name');
   const editDate = document.getElementById('date');

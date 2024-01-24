@@ -1,10 +1,10 @@
 import { editItem } from './EditItems';
 import { deleteItem } from './DeleteItem';
 import { changeItem } from './ChangeItem';
+import { uri } from './ApiUrl'
 
 // GETアクションのイベントハンドラ
 let todos = [];
-const uri = 'https://localhost:7034/api/todoitems';
 
 export const getItems = (showButtons) => {
     fetch(uri, {
