@@ -1,7 +1,6 @@
+import { uri } from './ApiUrl'
+
 // POSTアクションのイベントハンドラ
-
-const uri = 'https://localhost:7034/api/todoitems';
-
 export const addItem = () => {
   const addNameTextbox = document.getElementById('name');
   const addDate = document.getElementById('date');
