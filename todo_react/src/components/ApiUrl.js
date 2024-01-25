@@ -1,2 +1,2 @@
 // WebAPIのURI
-export const uri = 'https://localhost:7034/api/todoitems';
+export const uri = 'https://nakaoback.azurewebsites.net/';
