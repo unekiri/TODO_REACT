@@ -140,5 +140,9 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+   }
+
 }
