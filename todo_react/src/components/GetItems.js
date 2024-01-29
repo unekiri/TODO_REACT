@@ -1,4 +1,5 @@
 import { editItem } from './EditItems';
+import  axios from 'axios';
 import { deleteItem } from './DeleteItem';
 import { changeItem } from './ChangeItem';
 import { uri } from './ApiUrl'
@@ -7,13 +8,8 @@ import { uri } from './ApiUrl'
 let todos = [];
 
 export const getItems = (showButtons) => {
-    fetch(uri, {
-      method: 'GET',
-    })
-
-    // リクエストが成功すると、下記でresponseオブジェクトを処理する
-    .then(response => response.json())
-    .then(data => _displayItems(data, showButtons, todos))
+  axios.get(uri)
+    .then(response => _displayItems(response.data, showButtons, todos)) // リクエストが成功すると、下記でresponseオブジェクトを処理する // 関数の引数がresponse、戻り値がresponse.json()だけなのでこの書き方ができる
     .catch(error => console.error('Unable to get items.', error));
 }
 
